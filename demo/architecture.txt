@@ -100,7 +100,7 @@ API s for candidate voting system
 
 ### Data Storage
 
-As mentioned in the problem statement that not to used external db. So i used map to store the data
+As mentioned in the problem statement that not to use external db. So i used map to store the data
 
 ### Error Handling
 
@@ -115,14 +115,7 @@ REST
 
 I used dependencies like log 4j, spring doc open api for swagger configuration
 
-## Testing
-
-Explain the testing strategy for the API, including unit tests, integration tests, and any tools used for testing.
-
-
 ## Monitoring and Logging
 
 Logging is implemented by log 4j
 
-
-**Note: Customize the sections and content based on your specific API architecture and design. Include code snippets, diagrams, and links to relevant documentation.**
