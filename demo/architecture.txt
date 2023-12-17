@@ -1,0 +1,128 @@
+# API Architecture Documentation
+
+## Overview
+
+API s for candidate voting system
+
+###  API Endpoints
+
+
+
+- **Endpoint 1:**
+  - Description: Create Candidate.
+  - Request:
+    - Method: POST
+    - Path: `http://localhost:8080/entercandidate?name=ajay`
+  - Response:
+    - Example: `{
+                      "statusCode": 200,
+                      "status": "Success",
+                      "message": "Candidate created successfully",
+                      "result": null,
+                      "url": "http://localhost:8080/entercandidate "
+                }`
+
+
+- **Endpoint 2:**
+  - Description: Created candidate can cat their vote with this api
+  - Request:
+    - Method: POST
+    - Path: `http://localhost:8080/castvote?name=ajay`
+  - Response:
+    - Example: `{
+                      "statusCode": 200,
+                      "status": "Success",
+                      "message": "Vote cast successfully",
+                      "result": [
+                          {
+                              "count": 3
+                          }
+                      ],
+                      "url": "http://localhost:8080/castvote "
+                }`
+
+- **Endpoint 3:**
+  - Description: Get the vote count by candidate name
+  - Request:
+    - Method: GET
+    - Path: `http://localhost:8080/countvote?name=ajay`
+  - Response:
+    - Example: `{
+                    "statusCode": 200,
+                    "status": "Success",
+                    "message": "Latest vote count retrieved successfully",
+                    "result": [
+                        {
+                            "count": 3
+                        }
+                    ],
+                    "url": "http://localhost:8080/countvote "
+                }`
+
+- **Endpoint 4:**
+  - Description: Get all the candidates with vote count
+  - Request:
+    - Method: GET
+    - Path: ` http://localhost:8080/listvote`
+  - Response:
+    - Example: `{
+                    "statusCode": 200,
+                    "status": "Success",
+                    "message": "Vote details list retrieved successfully",
+                    "result": [
+                        [
+                            {
+                                "name": "ajay",
+                                "voteCount": 3
+                            }
+                        ]
+                    ],
+                    "url": "http://localhost:8080/listvote "
+                }`
+
+- **Endpoint 5:**
+  - Description: Get the winner with maximum vote count
+  - Request:
+    - Method: GET
+    - Path: `  http://localhost:8080/getwinner`
+  - Response:
+    - Example: `{
+                      "statusCode": 200,
+                      "status": "Success",
+                      "message": "Winner retrieved succesfully",
+                      "result": [
+                          {
+                              "candidateName": "ajay"
+                          }
+                      ],
+                      "url": "http://localhost:8080/getwinner "
+                  }`
+
+### Data Storage
+
+As mentioned in the problem statement that not to used external db. So i used map to store the data
+
+### Error Handling
+
+Error handling is taken care with common custom exceptions in the code
+
+
+## Design Patterns
+
+REST
+
+## Dependencies
+
+I used dependencies like log 4j, spring doc open api for swagger configuration
+
+## Testing
+
+Explain the testing strategy for the API, including unit tests, integration tests, and any tools used for testing.
+
+
+## Monitoring and Logging
+
+Logging is implemented by log 4j
+
+
+**Note: Customize the sections and content based on your specific API architecture and design. Include code snippets, diagrams, and links to relevant documentation.**
